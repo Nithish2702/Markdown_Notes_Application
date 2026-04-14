@@ -56,20 +56,6 @@ function Dashboard({ darkMode, setDarkMode }) {
     });
   };
 
-  // Strip markdown symbols for preview
-  const stripMarkdown = (text) => {
-    return text
-      .replace(/#{1,6}\s/g, '') // Remove headings
-      .replace(/\*\*(.+?)\*\*/g, '$1') // Remove bold
-      .replace(/\*(.+?)\*/g, '$1') // Remove italic
-      .replace(/`(.+?)`/g, '$1') // Remove inline code
-      .replace(/\[(.+?)\]\(.+?\)/g, '$1') // Remove links, keep text
-      .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-      .replace(/^[-*+]\s/gm, '') // Remove list markers
-      .replace(/^\d+\.\s/gm, '') // Remove ordered list numbers
-      .trim();
-  };
-
   return (
     <div className="dashboard">
       <header className="dashboard-header">

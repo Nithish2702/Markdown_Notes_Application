@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { marked } from 'marked';
 import axios from 'axios';
@@ -26,6 +26,7 @@ function NoteEditor({ darkMode, setDarkMode }) {
       fetchNote();
       fetchVersions();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   // Debounced auto-save
@@ -37,6 +38,7 @@ function NoteEditor({ darkMode, setDarkMode }) {
 
       return () => clearTimeout(timer);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [note.title, note.content, note.tags]);
 
   const fetchNote = async () => {
