@@ -1,0 +1,229 @@
+.note-editor {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+}
+
+.editor-header {
+  background-color: var(--bg-primary);
+  padding: 15px 30px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.save-status {
+  color: var(--success-color);
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.versions-panel {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 30px;
+}
+
+.versions-panel h3 {
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+}
+
+.versions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.version-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+.version-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.version-info span {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.editor-inputs {
+  background-color: var(--bg-primary);
+  padding: 20px 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title-input {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  border-radius: 0;
+}
+
+.title-input:focus {
+  border-bottom-color: var(--accent-color);
+}
+
+.tags-input {
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+.editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+
+.editor-pane, .preview-pane {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-pane {
+  border-right: 1px solid var(--border-color);
+}
+
+.pane-header {
+  background-color: var(--bg-primary);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.editor-pane textarea {
+  flex: 1;
+  padding: 20px;
+  border: none;
+  resize: none;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.editor-pane textarea:focus {
+  outline: none;
+}
+
+.markdown-preview {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.markdown-preview h1 {
+  font-size: 32px;
+  margin: 20px 0 10px 0;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.markdown-preview h2 {
+  font-size: 24px;
+  margin: 18px 0 8px 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.markdown-preview h3 {
+  font-size: 20px;
+  margin: 16px 0 6px 0;
+}
+
+.markdown-preview p {
+  margin: 10px 0;
+}
+
+.markdown-preview ul, .markdown-preview ol {
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+.markdown-preview li {
+  margin: 5px 0;
+}
+
+.markdown-preview code {
+  background-color: var(--bg-secondary);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.markdown-preview pre {
+  background-color: var(--bg-secondary);
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+.markdown-preview pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-preview a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.markdown-preview a:hover {
+  text-decoration: underline;
+}
+
+.markdown-preview blockquote {
+  border-left: 4px solid var(--accent-color);
+  padding-left: 15px;
+  margin: 15px 0;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .editor-container {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-pane {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .preview-pane {
+    display: none;
+  }
+}
